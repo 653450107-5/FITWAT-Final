@@ -1,4 +1,5 @@
 "use client";
+import React, { Suspense } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -25,7 +26,9 @@ export default function RootLayout({
         <link rel="icon" href="/images/LOGO.png" type="image/png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
       </body>
     </html>
   );
